@@ -84,11 +84,7 @@ export default function AboutSection() {
         >
           <div className="space-y-4 text-text-muted-light dark:text-text-muted-dark font-body leading-relaxed">
             <p>
-              I&apos;m an AI and Machine Learning Engineer and the founder of 
-              <strong> BTEHub Solutions</strong>, where I bridge the gap between complex 
-              intelligence and practical business application. My focus is on building 
-              intelligent systems, automation workflows, and modern web applications 
-              that help businesses and creators scale operations and solve real-world problems.
+              <strong>Ben Sam Oladoyin</strong> is a high-performance AI & Machine Learning Engineer and Founder of <strong>BTEHub Solutions</strong>, where he bridges the gap between complex intelligence and professional-grade business application. He specializes in building autonomous AI agents, intelligent workflows, and cinematic digital products that empower brands to scale with precision.
             </p>
             <p>
               I specialize in transforming ideas into working products - from designing 

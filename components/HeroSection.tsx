@@ -140,7 +140,7 @@ export default function HeroSection() {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-[16px] font-body text-text-muted-light dark:text-text-muted-dark max-w-xl mb-10 leading-relaxed text-left"
             >
-              AI & ML Engineer and Founder specializing in building intelligent systems, automation workflows, and scalable web applications through <strong>BTEHub Solutions</strong>. I focus on turning complex AI concepts into working digital products that solve real-world problems.
+              <strong>Ben Sam Oladoyin</strong> is a high-performance AI & Machine Learning Engineer and Founder of <strong>BTEHub Solutions</strong>. He specializes in bridging the gap between advanced AI research and professional-grade implementation. With expertise in autonomous agents and cinematic digital architecture, Ben empowers brands to scale through intelligent automation.
             </motion.p>
 
             {/* CTA Buttons */}
