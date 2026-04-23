@@ -14,6 +14,20 @@ export interface Project {
 
 export const projects: Project[] = [
   {
+    id: "btehub-solutions",
+    title: "BTEHub Solutions",
+    description:
+      "A premium AI engineering and education hub dedicated to high-performance automation and gallery-quality digital design.",
+    longDescription:
+      "BTEHub Solutions: A premium AI engineering and education hub dedicated to high-performance automation and gallery-quality digital design. We offer bespoke AI services, cinematic web architectures, and elite mentorship, transforming complex technology into professional-grade solutions for the next generation of digital-first brands and innovators.",
+    techStack: ["Next.js", "TypeScript", "Framer Motion", "Tailwind CSS", "AI/ML"],
+    category: "AI Application",
+    image: "/images/projects/btehub_hero.png",
+    github: "https://github.com/btehub-solutions",
+    live: "https://btehubsolutions.vercel.app",
+    featured: true,
+  },
+  {
     id: "alertdrive-ai",
     title: "AlertDrive AI",
     description:
