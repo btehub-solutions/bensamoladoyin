@@ -7,15 +7,16 @@ import SkillBadge from "./SkillBadge";
 import { skillCategories } from "@/data/skills";
 import { 
   SiPython, SiTensorflow, SiPytorch, SiJavascript, SiTypescript, SiDocker, 
-  SiKubernetes, SiAmazonaws, SiFastapi, SiFlask, SiNextdotjs, SiReact, 
+  SiKubernetes, SiAmazonwebservices, SiFastapi, SiFlask, SiNextdotjs, SiReact, 
   SiPostgresql, SiMongodb, SiRedis, SiPandas, SiScikitlearn, SiKeras, SiHuggingface,
   SiOpenai, SiAnthropic, SiN8N, SiVercel, SiApachekafka
 } from "react-icons/si";
+import React from "react";
 
-const iconMap: Record<string, any> = {
+const iconMap: Record<string, React.ElementType> = {
   "Python": SiPython, "TensorFlow": SiTensorflow, "PyTorch": SiPytorch,
   "JavaScript": SiJavascript, "TypeScript": SiTypescript, "Docker": SiDocker,
-  "Kubernetes": SiKubernetes, "AWS": SiAmazonaws, "FastAPI": SiFastapi,
+  "Kubernetes": SiKubernetes, "AWS": SiAmazonwebservices, "FastAPI": SiFastapi,
   "Flask": SiFlask, "Next.js": SiNextdotjs, "React": SiReact,
   "PostgreSQL": SiPostgresql, "MongoDB": SiMongodb, "Redis": SiRedis,
   "Pandas": SiPandas, "Scikit-learn": SiScikitlearn, "Keras": SiKeras,
