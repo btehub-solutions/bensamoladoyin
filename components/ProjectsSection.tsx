@@ -29,8 +29,8 @@ export default function ProjectsSection() {
             onClick={() => setActiveFilter(category)}
             className={`px-4 py-2 rounded-xl text-sm font-body transition-all duration-300 ${
               activeFilter === category
-                ? "bg-accent-violet text-white shadow-lg shadow-accent-violet/25"
-                : "bg-light-card dark:bg-dark-card text-text-muted-light dark:text-text-muted-dark border border-light-border dark:border-dark-border hover:border-accent-violet/30"
+                ? "bg-white text-black font-bold shadow-lg shadow-white/10"
+                : "bg-light-card dark:bg-black text-text-muted-light dark:text-text-muted-dark border border-light-border dark:border-dark-border hover:border-white/30"
             }`}
           >
             {category}
@@ -65,7 +65,7 @@ export default function ProjectsSection() {
           href="https://github.com/btehub-solutions"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-light-border dark:border-dark-border text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet hover:border-accent-violet/40 font-body text-sm transition-all duration-300"
+          className="inline-flex items-center gap-2 px-6 py-3 rounded-xl border border-light-border dark:border-dark-border text-text-muted-light dark:text-text-muted-dark hover:text-white hover:border-white/40 font-body text-sm transition-all duration-300"
         >
           View all projects on GitHub
           <svg

@@ -28,7 +28,7 @@ export default function CVPage() {
       <div className="max-w-[850px] mx-auto mb-8 flex items-center justify-between print:hidden">
         <Link 
           href="/"
-          className="flex items-center gap-2 text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors group"
+          className="flex items-center gap-2 text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors group"
         >
           <RiArrowLeftLine className="group-hover:-translate-x-1 transition-transform" />
           <span>Back to Portfolio</span>
@@ -36,7 +36,7 @@ export default function CVPage() {
         
         <button
           onClick={handlePrint}
-          className="flex items-center gap-2 px-6 py-2.5 bg-accent-violet text-white rounded-lg hover:bg-accent-violet/90 transition-all shadow-md active:scale-95"
+          className="flex items-center gap-2 px-6 py-2.5 bg-white text-black rounded-lg hover:bg-neutral-200 transition-all shadow-md active:scale-95 font-bold"
         >
           <RiDownloadLine size={18} />
           <span>Download PDF</span>
@@ -66,7 +66,7 @@ export default function CVPage() {
 
             <div className="flex-1 text-center md:text-left">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-2 tracking-tight">
-                Ben Sam <span className="text-accent-violet">Oladoyin</span>
+                Ben Sam Oladoyin
               </h1>
               <p className="text-xl md:text-2xl font-light text-slate-300 mb-6">
                 Founder & AI/ML Engineer
@@ -74,20 +74,20 @@ export default function CVPage() {
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-sm text-slate-400">
                 <a href="mailto:bensamoladoyin1@gmail.com" className="flex items-center justify-center md:justify-start gap-2 hover:text-white transition-colors">
-                  <RiMailLine className="text-accent-violet" />
+                  <RiMailLine className="text-white/60" />
                   <span>bensamoladoyin1@gmail.com</span>
                 </a>
                 <a href="tel:+2347045422815" className="flex items-center justify-center md:justify-start gap-2 hover:text-white transition-colors">
-                  <RiPhoneLine className="text-accent-violet" />
+                  <RiPhoneLine className="text-white/60" />
                   <span>+234 704 542 2815</span>
                 </a>
                 <div className="flex items-center justify-center md:justify-start gap-2">
-                  <RiMapPinLine className="text-accent-violet" />
+                  <RiMapPinLine className="text-white/60" />
                   <span>Abeokuta, Nigeria</span>
                 </div>
                 <div className="flex items-center justify-center md:justify-start gap-2">
-                  <RiExternalLinkLine className="text-accent-violet" />
-                  <span>www.btehubsolutions.vercel.app</span>
+                  <RiExternalLinkLine className="text-white/60" />
+                  <span>www.btehub.vercel.app</span>
                 </div>
               </div>
             </div>
@@ -123,7 +123,7 @@ export default function CVPage() {
                   <div key={exp.id} className="relative pl-0">
                     <div className="flex flex-col sm:flex-row sm:items-baseline justify-between mb-2">
                       <h3 className="font-bold text-lg text-slate-900 dark:text-white ">{exp.role}</h3>
-                      <span className="text-sm font-medium text-accent-violet whitespace-nowrap">{exp.period}</span>
+                    <span className="text-sm font-medium text-white/60 whitespace-nowrap">{exp.period}</span>
                     </div>
                     <div className="text-sm font-bold text-slate-600 dark:text-slate-300 mb-3 uppercase tracking-wider">
                       {exp.organization} • {exp.location}
@@ -131,7 +131,7 @@ export default function CVPage() {
                     <ul className="space-y-2 list-none">
                       {exp.description.map((bullet, idx) => (
                         <li key={idx} className="text-[14.5px] text-slate-600 dark:text-slate-400 flex gap-2">
-                          <span className="text-accent-violet mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full border border-accent-violet"></span>
+                          <span className="text-white mt-1.5 shrink-0 block w-1.5 h-1.5 rounded-full border border-white/20"></span>
                           {bullet}
                         </li>
                       ))}
@@ -177,12 +177,12 @@ export default function CVPage() {
                 Links
               </h2>
               <div className="space-y-3">
-                <a href="https://linkedin.com/in/ben-sam-oladoyin-527966233" className="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-accent-violet transition-colors">
-                  <RiLinkedinBoxLine size={20} className="text-accent-violet" />
+                <a href="https://linkedin.com/in/ben-sam-oladoyin-527966233" className="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-white transition-colors">
+                  <RiLinkedinBoxLine size={20} className="text-white/60" />
                   <span className="text-sm">LinkedIn</span>
                 </a>
-                <a href="https://github.com/btehub-solutions" className="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-accent-violet transition-colors">
-                  <RiGithubLine size={20} className="text-accent-violet" />
+                <a href="https://github.com/btehub-solutions" className="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-white transition-colors">
+                  <RiGithubLine size={20} className="text-white/60" />
                   <span className="text-sm">GitHub</span>
                 </a>
               </div>
@@ -236,11 +236,11 @@ export default function CVPage() {
               <div className="space-y-2 text-sm text-slate-600 dark:text-slate-400 ">
                 <p className="flex justify-between">
                   <span>English</span>
-                  <span className="text-accent-violet font-medium italic">Fluent</span>
+                  <span className="text-white/60 font-medium italic">Fluent</span>
                 </p>
                 <p className="flex justify-between">
                   <span>Hausa</span>
-                  <span className="text-accent-violet font-medium italic">Fluent</span>
+                  <span className="text-white/60 font-medium italic">Fluent</span>
                 </p>
                 <p className="flex justify-between">
                   <span>Yoruba</span>

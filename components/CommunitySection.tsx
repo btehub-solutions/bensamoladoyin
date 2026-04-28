@@ -29,11 +29,11 @@ const typeLabels: Record<string, string> = {
 };
 
 const typeColors: Record<string, string> = {
-  talk: "text-accent-violet bg-accent-violet/10 border-accent-violet/20",
-  article: "text-accent-cyan bg-accent-cyan/10 border-accent-cyan/20",
-  workshop: "text-emerald-400 bg-emerald-400/10 border-emerald-400/20",
-  "open-source": "text-orange-400 bg-orange-400/10 border-orange-400/20",
-  mentorship: "text-pink-400 bg-pink-400/10 border-pink-400/20",
+  talk: "text-white bg-white/10 border-white/20",
+  article: "text-white bg-white/10 border-white/20",
+  workshop: "text-white bg-white/10 border-white/20",
+  "open-source": "text-white bg-white/10 border-white/20",
+  mentorship: "text-white bg-white/10 border-white/20",
 };
 
 export default function CommunitySection() {
@@ -55,20 +55,20 @@ export default function CommunitySection() {
               viewport={{ once: true, margin: "-10px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -2 }}
-              className="group flex gap-4 p-6 rounded-2xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border glow-card transform-gpu backface-hidden shadow-sm hover:shadow-md hover:border-accent-violet/30"
+              className="group flex gap-4 p-6 rounded-2xl bg-white dark:bg-black border border-light-border dark:border-dark-border glow-card transform-gpu backface-hidden shadow-sm hover:shadow-md hover:border-white/30"
               style={{
                 transition: "border-color 0.3s ease, box-shadow 0.3s ease"
               }}
             >
               {/* Icon */}
-              <div className="shrink-0 w-12 h-12 rounded-xl bg-accent-violet/10 border border-accent-violet/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <Icon className="w-5 h-5 text-accent-violet" />
+              <div className="shrink-0 w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                <Icon className="w-5 h-5 text-white" />
               </div>
 
               {/* Content */}
               <div className="flex-1 min-w-0">
                 <div className="flex flex-wrap items-center gap-2 mb-2">
-                  <h3 className="text-base font-display font-bold text-text-primary-light dark:text-text-primary-dark group-hover:text-accent-violet transition-colors">
+                  <h3 className="text-base font-display font-bold text-text-primary-light dark:text-text-primary-dark group-hover:text-white transition-colors">
                     {item.title}
                   </h3>
                   <span
@@ -89,7 +89,7 @@ export default function CommunitySection() {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-1 text-xs text-accent-violet hover:text-accent-cyan transition-colors"
+                      className="flex items-center gap-1 text-xs text-white/60 hover:text-white transition-colors"
                     >
                       View
                       <FiExternalLink className="w-3 h-3" />

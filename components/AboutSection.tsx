@@ -47,7 +47,7 @@ export default function AboutSection() {
         >
           <div className="relative">
             {/* Gradient border ring */}
-            <div className="absolute -inset-1 bg-gradient-to-br from-accent-violet to-accent-cyan rounded-full opacity-30 blur-sm" />
+            <div className="absolute -inset-1 bg-white/20 rounded-full opacity-30 blur-sm" />
             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border">
               {/* Avatar profile photo */}
               <Image 
@@ -62,9 +62,9 @@ export default function AboutSection() {
             <motion.div
               animate={{ y: [0, -10, 0] }}
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-              className="absolute -bottom-4 -right-4 px-4 py-3 rounded-xl bg-light-surface dark:bg-dark-card border border-light-border dark:border-dark-border shadow-xl backdrop-blur-sm"
+              className="absolute -bottom-4 -right-4 px-4 py-3 rounded-xl bg-black dark:bg-black border border-light-border dark:border-dark-border shadow-xl backdrop-blur-sm"
             >
-              <div className="text-accent-violet font-display font-bold text-lg">
+              <div className="text-white font-display font-bold text-lg">
                 3+ Years
               </div>
               <div className="text-xs text-text-muted-light dark:text-text-muted-dark font-mono">
@@ -113,7 +113,7 @@ export default function AboutSection() {
             ].map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1.5 rounded-lg bg-accent-violet/10 text-accent-violet text-sm font-mono border border-accent-violet/20"
+                className="px-3 py-1.5 rounded-lg bg-white/5 text-white text-sm font-mono border border-white/10"
               >
                 {tag}
               </span>
@@ -132,12 +132,12 @@ export default function AboutSection() {
               viewport={{ once: true, margin: "-10px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               whileHover={{ y: -5 }}
-              className="group relative p-6 rounded-2xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border text-center hover:border-accent-violet/30 glow-card transform-gpu backface-hidden shadow-sm hover:shadow-xl"
+              className="group relative p-6 rounded-2xl bg-black dark:bg-black border border-light-border dark:border-dark-border text-center hover:border-white/30 glow-card transform-gpu backface-hidden shadow-none hover:shadow-xl"
               style={{
                 transition: "border-color 0.3s ease, box-shadow 0.3s ease"
               }}
             >
-            <item.icon className="w-6 h-6 text-accent-violet mx-auto mb-3 group-hover:scale-110 transition-transform" />
+            <item.icon className="w-6 h-6 text-white mx-auto mb-3 group-hover:scale-110 transition-transform" />
             <div className="text-3xl font-display font-bold text-text-primary-light dark:text-text-primary-dark mb-1">
               {item.value}
             </div>

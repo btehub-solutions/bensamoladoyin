@@ -59,33 +59,29 @@ export default function ContactSection() {
     return isValid;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validate()) return;
     
     setStatus("loading");
     
     try {
-      // Construct WhatsApp message without markdown symbols
-      const phoneNumber = "2347045422815";
-      const waMessage = `PORTFOLIO CONTACT FORM%0A%0A` +
-        `Name: ${formData.name}%0A` +
-        `Email: ${formData.email}%0A` +
-        `Subject: ${formData.subject}%0A%0A` +
-        `--- MESSAGE ---%0A` +
-        `${formData.message}`;
-      
-      const whatsappUrl = `https://wa.me/${phoneNumber}?text=${waMessage}`;
-      
-      // Open WhatsApp in a new tab
-      window.open(whatsappUrl, "_blank");
-      
-      // Update status to success and reset form
-      setStatus("success");
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      
-      // Reset status back to idle after 3 seconds
-      setTimeout(() => setStatus("idle"), 3000);
+      const response = await fetch("https://formspree.io/f/maqazkga", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Accept": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setStatus("idle"), 3000);
+      } else {
+        setStatus("error");
+      }
     } catch {
       setStatus("error");
     }
@@ -94,7 +90,7 @@ export default function ContactSection() {
   return (
     <SectionWrapper id="contact" showDivider={false}>
       <div className="flex flex-col items-start mb-12">
-        <span className="text-accent-violet font-display font-medium text-sm tracking-wider uppercase mb-2">
+        <span className="text-white font-display font-medium text-sm tracking-wider uppercase mb-2">
           Contact
         </span>
         <h2 className="text-[32px] md:text-[40px] font-display font-bold text-text-primary-light dark:text-text-primary-dark">
@@ -117,38 +113,38 @@ export default function ContactSection() {
 
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-3">
-              <RiMapPinLine className="w-[18px] h-[18px] text-accent-violet" />
+              <RiMapPinLine className="w-[18px] h-[18px] text-white" />
               <span className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark">
                 Abeokuta / Lagos, Nigeria
               </span>
             </div>
             <div className="flex items-center gap-3">
-              <RiMailLine className="w-[18px] h-[18px] text-accent-violet" />
-              <a href="mailto:bensamoladoyin1@gmail.com" className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors">
+              <RiMailLine className="w-[18px] h-[18px] text-white" />
+              <a href="mailto:bensamoladoyin1@gmail.com" className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors">
                 bensamoladoyin1@gmail.com
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <RiLinkedinFill className="w-[18px] h-[18px] text-accent-violet" />
-              <a href="https://www.linkedin.com/in/ben-sam-oladoyin-527966233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noreferrer" className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors">
+              <RiLinkedinFill className="w-[18px] h-[18px] text-white" />
+              <a href="https://www.linkedin.com/in/ben-sam-oladoyin-527966233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app" target="_blank" rel="noreferrer" className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors">
                 LinkedIn Profile
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <RiGithubFill className="w-[18px] h-[18px] text-accent-violet" />
-              <a href="https://github.com/btehub-solutions" target="_blank" rel="noreferrer" className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors">
+              <RiGithubFill className="w-[18px] h-[18px] text-white" />
+              <a href="https://github.com/btehub-solutions" target="_blank" rel="noreferrer" className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors">
                 GitHub Organization
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <RiFacebookFill className="w-[18px] h-[18px] text-accent-violet" />
-              <a href="https://www.facebook.com/share/16KthtYMDY/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors">
+              <RiFacebookFill className="w-[18px] h-[18px] text-white" />
+              <a href="https://www.facebook.com/share/16KthtYMDY/?mibextid=wwXIfr" target="_blank" rel="noreferrer" className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors">
                 Facebook Page
               </a>
             </div>
             <div className="flex items-center gap-3">
-              <RiWhatsappFill className="w-[18px] h-[18px] text-accent-violet" />
-              <a href="https://wa.me/2347045422815" target="_blank" rel="noreferrer" className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors">
+              <RiWhatsappFill className="w-[18px] h-[18px] text-white" />
+              <a href="https://wa.me/2347045422815" target="_blank" rel="noreferrer" className="font-body text-[14px] text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors">
                 WhatsApp Contact
               </a>
             </div>
@@ -169,7 +165,7 @@ export default function ContactSection() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 className={`w-full px-4 py-3 rounded-xl bg-light-surface dark:bg-dark-surface border text-text-primary-light dark:text-text-primary-dark font-body text-[14px] placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark focus:outline-none transition-colors ${
-                  errors.name ? "border-red-400" : "border-light-border dark:border-dark-border focus:border-accent-violet focus:ring-1 focus:ring-accent-violet"
+                  errors.name ? "border-red-400" : "border-light-border dark:border-dark-border focus:border-white focus:ring-1 focus:ring-white"
                 }`}
                 placeholder="Full Name"
               />
@@ -182,7 +178,7 @@ export default function ContactSection() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 className={`w-full px-4 py-3 rounded-xl bg-light-surface dark:bg-dark-surface border text-text-primary-light dark:text-text-primary-dark font-body text-[14px] placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark focus:outline-none transition-colors ${
-                  errors.email ? "border-red-400" : "border-light-border dark:border-dark-border focus:border-accent-violet focus:ring-1 focus:ring-accent-violet"
+                  errors.email ? "border-red-400" : "border-light-border dark:border-dark-border focus:border-white focus:ring-1 focus:ring-white"
                 }`}
                 placeholder="Email"
               />
@@ -195,7 +191,7 @@ export default function ContactSection() {
                 value={formData.subject}
                 onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
                 className={`w-full px-4 py-3 rounded-xl bg-light-surface dark:bg-dark-surface border text-text-primary-light dark:text-text-primary-dark font-body text-[14px] placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark focus:outline-none transition-colors ${
-                  errors.subject ? "border-red-400" : "border-light-border dark:border-dark-border focus:border-accent-violet focus:ring-1 focus:ring-accent-violet"
+                  errors.subject ? "border-red-400" : "border-light-border dark:border-dark-border focus:border-white focus:ring-1 focus:ring-white"
                 }`}
                 placeholder="Subject"
               />
@@ -208,7 +204,7 @@ export default function ContactSection() {
                 value={formData.message}
                 onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                 className={`w-full px-4 py-3 rounded-xl bg-light-surface dark:bg-dark-surface border text-text-primary-light dark:text-text-primary-dark font-body text-[14px] placeholder:text-text-muted-light dark:placeholder:text-text-muted-dark focus:outline-none transition-colors resize-none ${
-                  errors.message ? "border-red-400" : "border-light-border dark:border-dark-border focus:border-accent-violet focus:ring-1 focus:ring-accent-violet"
+                  errors.message ? "border-red-400" : "border-light-border dark:border-dark-border focus:border-white focus:ring-1 focus:ring-white"
                 }`}
                 placeholder="Message"
               />
@@ -220,7 +216,7 @@ export default function ContactSection() {
               whileTap={{ scale: 0.98 }}
               type="submit"
               disabled={status === "loading"}
-              className="w-full mt-2 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-accent-violet to-accent-cyan text-white font-display font-medium text-[15px] shadow-lg shadow-accent-violet/20 hover:shadow-accent-violet/40 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
+              className="w-full mt-2 flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white text-black font-display font-bold text-[15px] shadow-lg shadow-white/10 hover:shadow-white/20 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
             >
               {status === "idle" && "Send Message"}
               {status === "loading" && (
@@ -231,8 +227,8 @@ export default function ContactSection() {
               )}
               {status === "success" && (
                 <>
-                  <RiCheckLine className="w-5 h-5 text-accent-cyan" />
-                  <span className="text-accent-cyan">Message Sent!</span>
+                  <RiCheckLine className="w-5 h-5 text-white" />
+                  <span className="text-white">Message Sent!</span>
                 </>
               )}
               {status === "error" && (

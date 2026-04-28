@@ -18,7 +18,7 @@ export default function SkillBadge({ name, level, index }: SkillBadgeProps) {
       className="group"
     >
       <div className="flex items-center justify-between mb-2">
-        <span className="text-sm font-mono text-text-primary-light dark:text-text-primary-dark group-hover:text-accent-violet transition-colors">
+        <span className="text-sm font-mono text-text-primary-light dark:text-text-primary-dark group-hover:text-white transition-colors">
           {name}
         </span>
         <span className="text-xs font-mono text-text-muted-light dark:text-text-muted-dark">
@@ -31,7 +31,7 @@ export default function SkillBadge({ name, level, index }: SkillBadgeProps) {
           whileInView={{ width: `${level}%` }}
           viewport={{ once: true }}
           transition={{ duration: 1, delay: index * 0.05 + 0.3, ease: "easeOut" }}
-          className="h-full rounded-full bg-gradient-to-r from-accent-violet to-accent-cyan relative"
+          className="h-full rounded-full bg-white relative"
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent to-white/20 rounded-full" />
         </motion.div>

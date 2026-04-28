@@ -24,7 +24,7 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://bensam.vercel.app"),
+  metadataBase: new URL("https://btehub.vercel.app"),
   title: "Ben Sam Oladoyin | AI & ML Engineer",
   description: "AI & ML Engineer specializing in LLMs, AI Agents, Computer Vision, and Conversational AI. Available for full-time roles globally.",
   keywords: ["AI Engineer", "ML Engineer", "LLM", "AI Agents", "Computer Vision", "Nigeria", "Ben Sam Oladoyin", "BTEHub"],
@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Ben Sam Oladoyin | AI & ML Engineer",
     description: "Building intelligent systems that solve real problems.",
-    url: "https://bensam.vercel.app",
+    url: "https://btehub.vercel.app",
     siteName: "Ben Sam Oladoyin",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     type: "website",
@@ -68,7 +68,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Ben Sam Oladoyin",
               "jobTitle": "AI & ML Engineer",
-              "url": "https://bensam.vercel.app",
+              "url": "https://btehub.vercel.app",
               "sameAs": [
                 "[PLACEHOLDER_LINKEDIN_URL]",
                 "[PLACEHOLDER_GITHUB_URL]"

@@ -16,7 +16,7 @@ export default function ExperienceSection() {
       <div className="max-w-4xl mx-auto">
         <div className="relative">
           {/* Timeline Line */}
-          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-accent-violet via-accent-cyan to-accent-violet/20 transform md:-translate-x-1/2" />
+          <div className="absolute left-0 md:left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-white/40 via-white/20 to-transparent transform md:-translate-x-1/2" />
 
           {experiences.map((exp, index) => (
             <motion.div
@@ -33,14 +33,14 @@ export default function ExperienceSection() {
             >
               {/* Timeline Dot */}
               <div
-                className={`absolute top-0 w-4 h-4 rounded-full bg-accent-violet border-4 border-light-bg dark:border-dark-bg z-10 left-0 md:left-1/2 transform -translate-x-1/2`}
+                className={`absolute top-0 w-4 h-4 rounded-full bg-white border-4 border-light-bg dark:border-dark-bg z-10 left-0 md:left-1/2 transform -translate-x-1/2`}
               >
-                <div className="absolute inset-0 rounded-full bg-accent-violet animate-ping opacity-20" />
+                <div className="absolute inset-0 rounded-full bg-white animate-ping opacity-20" />
               </div>
 
               {/* Card */}
               <div 
-                className="p-6 rounded-2xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border hover:shadow-xl hover:shadow-accent-violet/5 hover:border-accent-violet/30 glow-card transform-gpu backface-hidden"
+                className="p-6 rounded-2xl bg-white dark:bg-black border border-light-border dark:border-dark-border hover:shadow-xl hover:shadow-white/5 hover:border-white/30 glow-card transform-gpu backface-hidden"
                 style={{
                   transition: "border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease",
                   willChange: "transform, opacity"
@@ -55,7 +55,7 @@ export default function ExperienceSection() {
                     href={exp.organizationUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-block text-accent-violet font-body font-semibold mt-1 hover:underline transition-all"
+                    className="inline-block text-white font-body font-bold mt-1 hover:underline transition-all"
                   >
                     {exp.organization}
                   </a>
@@ -81,7 +81,7 @@ export default function ExperienceSection() {
                       }`}
                     >
                       <RiArrowRightSLine 
-                        className={`text-accent-violet/60 mt-1 shrink-0 ${index % 2 === 0 ? "rotate-180" : ""}`} 
+                        className={`text-white/40 mt-1 shrink-0 ${index % 2 === 0 ? "rotate-180" : ""}`} 
                         size={16} 
                       />
                       <span>{bullet}</span>

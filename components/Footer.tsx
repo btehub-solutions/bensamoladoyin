@@ -4,7 +4,7 @@ import { RiGithubFill, RiLinkedinFill, RiFacebookFill, RiWhatsappFill } from "re
 
 export default function Footer() {
   return (
-    <footer className="w-full pt-12 pb-8 bg-light-surface dark:bg-dark-surface border-t border-light-border dark:border-dark-border">
+    <footer className="w-full pt-12 pb-8 bg-black dark:bg-black">
       <div className="max-w-7xl mx-auto px-4 flex flex-col items-center text-center">
         {/* Row 1 */}
         <div className="flex flex-col items-center gap-1 mb-6">
@@ -22,7 +22,7 @@ export default function Footer() {
             <a
               key={link}
               href={`#${link.toLowerCase()}`}
-              className="font-body text-[12px] md:text-[13px] text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors"
+              className="font-body text-[12px] md:text-[13px] text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors"
             >
               {link}
             </a>
@@ -36,7 +36,7 @@ export default function Footer() {
               href="https://github.com/btehub-solutions"
               target="_blank"
               rel="noreferrer"
-              className="text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors"
+              className="text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors"
               title="GitHub"
             >
               <RiGithubFill size={20} />
@@ -45,7 +45,7 @@ export default function Footer() {
               href="https://www.linkedin.com/in/ben-sam-oladoyin-527966233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
               target="_blank"
               rel="noreferrer"
-              className="text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors"
+              className="text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors"
               title="LinkedIn"
             >
               <RiLinkedinFill size={20} />
@@ -54,7 +54,7 @@ export default function Footer() {
               href="https://www.facebook.com/share/16KthtYMDY/?mibextid=wwXIfr"
               target="_blank"
               rel="noreferrer"
-              className="text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors"
+              className="text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors"
               title="Facebook"
             >
               <RiFacebookFill size={20} />
@@ -63,7 +63,7 @@ export default function Footer() {
               href="https://wa.me/2347045422815"
               target="_blank"
               rel="noreferrer"
-              className="text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors"
+              className="text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors"
               title="WhatsApp"
             >
               <RiWhatsappFill size={20} />

@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RiMenuLine, RiCloseLine } from "react-icons/ri";
 import Link from "next/link";
-import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
   { name: "Home", href: "#hero" },
@@ -54,15 +53,15 @@ export default function Navbar() {
     <>
       <nav className={`fixed top-0 left-0 right-0 z-50 h-[64px] w-full transition-all duration-300 ease-in-out ${
         isScrolled 
-          ? "bg-light-surface/90 dark:bg-dark-surface/90 backdrop-blur-md border-b border-light-border dark:border-dark-border" 
+          ? "bg-black/90 dark:bg-black/90 backdrop-blur-md border-b border-light-border dark:border-dark-border" 
           : "bg-transparent border-b border-transparent"
       }`}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-full flex items-center justify-between">
           <Link href="/" className="flex items-baseline gap-1 group">
-            <span className="font-display font-bold text-lg text-text-primary-light dark:text-text-primary-dark group-hover:text-accent-violet transition duration-200">
+            <span className="font-display font-bold text-lg text-text-primary-light dark:text-text-primary-dark group-hover:text-white transition duration-200">
               Ben Sam Oladoyin
             </span>
-            <span className="w-[6px] h-[6px] rounded-full bg-accent-violet shadow-[0_0_8px_var(--tw-colors-accent-violet)]"></span>
+            <span className="w-[4px] h-[4px] rounded-full bg-white opacity-20"></span>
           </Link>
 
           {/* Desktop Nav Links */}
@@ -75,8 +74,8 @@ export default function Navbar() {
                   href={link.href}
                   className={`text-[14px] font-body transition-colors duration-300 py-2 ${
                     isActive 
-                      ? "text-accent-violet font-medium" 
-                      : "text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet"
+                      ? "text-white font-medium" 
+                      : "text-text-muted-light dark:text-text-muted-dark hover:text-white"
                   }`}
                 >
                   {link.name}
@@ -84,13 +83,11 @@ export default function Navbar() {
               );
             })}
             <div className="flex items-center gap-4 ml-2">
-              <ThemeToggle />
               <div className="relative flex items-center justify-center">
-                <div className="absolute inset-x-0 inset-y-0 bg-accent-violet/30 rounded-lg -z-10 animate-[pulseRing_2s_infinite]"></div>
                 <a href="#contact">
                   <motion.button
                     whileHover={{ scale: 1.03, filter: "brightness(1.1)" }}
-                    className="px-4 py-2 rounded-lg text-white text-[14px] font-medium bg-gradient-to-r from-accent-violet to-accent-cyan transition-all duration-300 shadow-md shadow-accent-violet/20"
+                    className="px-4 py-2 rounded-full text-black text-[14px] font-bold bg-white transition-all duration-300 shadow-md shadow-white/10"
                   >
                     Hire Me
                   </motion.button>
@@ -103,7 +100,7 @@ export default function Navbar() {
           <div className="flex md:hidden items-center gap-4">
             <button
               onClick={() => setIsMobileMenuOpen(true)}
-              className="text-text-primary-light dark:text-text-primary-dark hover:text-accent-violet transition-colors"
+              className="text-text-primary-light dark:text-text-primary-dark hover:text-white transition-colors"
               aria-label="Open mobile menu"
             >
               <RiMenuLine className="w-6 h-6" />
@@ -134,18 +131,18 @@ export default function Navbar() {
             animate={{ x: 0 }}
             exit={{ x: "100%" }}
             transition={{ type: "spring", stiffness: 300, damping: 30 }}
-            className="fixed top-0 right-0 z-[60] h-full w-[75vw] max-w-[320px] bg-light-surface dark:bg-dark-surface border-l border-light-border dark:border-dark-border flex flex-col items-center pt-[64px]"
+            className="fixed top-0 right-0 z-[60] h-full w-[75vw] max-w-[320px] bg-black dark:bg-black border-l border-light-border dark:border-dark-border flex flex-col items-center pt-[64px]"
           >
             <div className="absolute top-0 right-0 h-[64px] flex items-center px-4 sm:px-6 w-full justify-between">
               <Link href="/" className="flex items-baseline gap-1 group" onClick={() => setIsMobileMenuOpen(false)}>
-                <span className="font-display font-bold text-lg text-text-primary-light dark:text-text-primary-dark group-hover:text-accent-violet transition duration-200">
+                <span className="font-display font-bold text-lg text-text-primary-light dark:text-text-primary-dark group-hover:text-white transition duration-200">
                   Ben Sam Oladoyin
                 </span>
-                <span className="w-[6px] h-[6px] rounded-full bg-accent-violet shadow-[0_0_8px_var(--tw-colors-accent-violet)]"></span>
+                <span className="w-[4px] h-[4px] rounded-full bg-white opacity-20"></span>
               </Link>
               <button
                 onClick={() => setIsMobileMenuOpen(false)}
-                className="text-text-primary-light dark:text-text-primary-dark hover:text-accent-violet transition-colors"
+                className="text-text-primary-light dark:text-text-primary-dark hover:text-white transition-colors"
                 aria-label="Close mobile menu"
               >
                 <RiCloseLine className="w-6 h-6" />
@@ -163,8 +160,8 @@ export default function Navbar() {
                       onClick={() => setIsMobileMenuOpen(false)}
                       className={`text-[18px] font-body py-4 border-b border-light-border dark:border-dark-border w-full text-center transition-colors duration-300 ${
                         isActive 
-                          ? "text-accent-violet font-medium" 
-                          : "text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet"
+                          ? "text-white font-medium" 
+                          : "text-text-muted-light dark:text-text-muted-dark hover:text-white"
                       }`}
                     >
                       {link.name}
@@ -173,13 +170,11 @@ export default function Navbar() {
                 })}
               </div>
               <div className="mt-auto w-full flex flex-col items-center gap-6 pt-6">
-                <ThemeToggle />
                 <div className="relative w-full flex items-center justify-center isolate">
-                  <div className="absolute inset-x-0 inset-y-0 bg-accent-violet/30 rounded-lg -z-10 animate-[pulseRing_2s_infinite]"></div>
                   <a href="#contact" className="w-full" onClick={() => setIsMobileMenuOpen(false)}>
                     <motion.button
                       whileHover={{ scale: 1.05 }}
-                      className="w-full px-6 py-3 rounded-lg text-white text-base font-medium bg-gradient-to-r from-accent-violet to-accent-cyan transition-all duration-300 shadow-md shadow-accent-violet/20"
+                      className="w-full px-6 py-3 rounded-full text-black text-base font-bold bg-white transition-all duration-300 shadow-md shadow-white/10"
                     >
                       Hire Me
                     </motion.button>

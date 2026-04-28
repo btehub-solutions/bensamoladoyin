@@ -61,7 +61,7 @@ export default function TypedText({
     <span className={className}>
       {currentText}
       <span 
-        className="inline-block text-accent-cyan ml-1 font-light" 
+        className="inline-block text-white ml-1 font-light" 
         style={{ animation: "blink 0.75s ease infinite" }}
       >
         |

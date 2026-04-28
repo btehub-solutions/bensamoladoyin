@@ -15,7 +15,7 @@ export const experiences: Experience[] = [
     id: "exp-0",
     role: "Founder & Lead Engineer",
     organization: "BTEHub Solutions",
-    organizationUrl: "https://btehubsolutions.vercel.app",
+    organizationUrl: "https://btehub.vercel.app",
     type: "Position",
     location: "Abeokuta, Nigeria",
     period: "2023 - Present",

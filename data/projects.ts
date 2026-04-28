@@ -24,7 +24,7 @@ export const projects: Project[] = [
     category: "AI Application",
     image: "/images/projects/btehub_hero.png",
     github: "https://github.com/btehub-solutions",
-    live: "https://btehubsolutions.vercel.app",
+    live: "https://btehub.vercel.app",
     featured: true,
   },
   {

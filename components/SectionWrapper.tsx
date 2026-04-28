@@ -17,7 +17,7 @@ export default function SectionWrapper({
   showDivider = true,
 }: SectionWrapperProps) {
   return (
-    <section id={id} className={`relative py-20 md:py-28 ${className}`}>
+    <section id={id} className={`relative py-20 md:py-32 ${className}`}>
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -50,10 +50,10 @@ export function SectionHeading({
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ duration: 0.5 }}
-        className="text-3xl md:text-4xl lg:text-5xl font-display font-bold text-text-primary-light dark:text-text-primary-dark"
+        className="text-3xl md:text-4xl lg:text-5xl font-display font-bold leading-[1.1] text-text-primary-light dark:text-text-primary-dark"
       >
         {title}
-        <span className="gradient-text">.</span>
+        <span className="text-white/20">.</span>
       </motion.h2>
       {subtitle && (
         <motion.p

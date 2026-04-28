@@ -39,7 +39,7 @@ export default function CertificationsSection() {
             viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
             whileHover={{ y: -5 }}
-            className="group relative flex flex-col rounded-2xl bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border overflow-hidden h-full shadow-sm hover:shadow-xl hover:border-accent-violet/30 glow-card transform-gpu backface-hidden"
+            className="group relative flex flex-col rounded-2xl bg-white dark:bg-black border border-light-border dark:border-dark-border overflow-hidden h-full shadow-sm hover:shadow-xl hover:border-white/30 glow-card transform-gpu backface-hidden"
             style={{
               transitionProperty: "border-color, box-shadow",
               transitionDuration: "300ms",
@@ -77,18 +77,18 @@ export default function CertificationsSection() {
             {/* Content */}
             <div className="p-6 flex flex-col flex-grow">
               <div className="flex items-start justify-between mb-3">
-                <div className="w-10 h-10 rounded-lg bg-accent-violet/10 border border-accent-violet/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                  <FiAward className="w-5 h-5 text-accent-violet" />
+                <div className="w-10 h-10 rounded-lg bg-white/10 border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <FiAward className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-[10px] font-mono px-2 py-1 rounded-full bg-accent-violet/10 text-accent-violet border border-accent-violet/20 font-bold">
+                <span className="text-[10px] font-mono px-2 py-1 rounded-full bg-white/10 text-white border border-white/20 font-bold">
                   {cert.date}
                 </span>
               </div>
 
-              <h3 className="text-lg font-display font-bold text-text-primary-light dark:text-text-primary-dark mb-2 group-hover:text-accent-violet transition-colors leading-snug">
+              <h3 className="text-lg font-display font-bold text-text-primary-light dark:text-text-primary-dark mb-2 group-hover:text-white transition-colors leading-snug">
                 {cert.title}
               </h3>
-              <p className="text-sm text-accent-violet font-body mb-6 font-medium">
+              <p className="text-sm text-white/60 font-body mb-6 font-medium">
                 {cert.issuer}
               </p>
 
@@ -96,7 +96,7 @@ export default function CertificationsSection() {
                 {cert.image && (
                   <button
                     onClick={() => setSelectedImage(cert.image || null)}
-                    className="inline-flex items-center gap-2 text-sm font-bold text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet transition-colors font-body py-2"
+                    className="inline-flex items-center gap-2 text-sm font-bold text-text-muted-light dark:text-text-muted-dark hover:text-white transition-colors font-body py-2"
                   >
                     View Full Certificate
                     <FiExternalLink className="w-3.5 h-3.5" />

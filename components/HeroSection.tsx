@@ -74,12 +74,7 @@ export default function HeroSection() {
       <div 
         className="absolute inset-0 pointer-events-none z-0"
         style={{
-          backgroundColor: isDark ? "#0A0A0F" : "#F5F7FA",
-          backgroundImage: isDark
-            ? "radial-gradient(ellipse 60% 50% at 70% 50%, rgba(99, 102, 241, 0.08) 0%, transparent 70%), radial-gradient(circle, rgba(99, 102, 241, 0.15) 1px, transparent 1px)"
-            : "radial-gradient(ellipse 60% 50% at 30% 50%, rgba(99, 102, 241, 0.05) 0%, transparent 70%), radial-gradient(circle, rgba(99, 102, 241, 0.1) 1px, transparent 1px)",
-          backgroundSize: "100% 100%, 28px 28px",
-          backgroundPosition: "0 0, 0 0"
+          backgroundColor: isDark ? "#000000" : "#F5F7FA",
         }}
       />
 
@@ -107,9 +102,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, duration: 0.6 }}
-              className="text-[36px] md:text-[46px] lg:text-[56px] font-display font-bold leading-tight mb-4 text-text-primary-light dark:text-text-primary-dark"
+              className="text-[36px] md:text-[46px] lg:text-[56px] font-display font-bold leading-[1.1] mb-4 text-text-primary-light dark:text-text-primary-dark"
             >
-              Ben Sam <span className="text-accent-violet relative inline-block border-b-4 border-accent-violet pb-1" style={{ textShadow: isDark ? "0 0 20px rgba(99,102,241,0.4)" : "0 0 20px rgba(99,102,241,0.1)" }}>Oladoyin</span>
+              Ben Sam <span className="text-white relative inline-block border-b-2 border-white/20 pb-1">Oladoyin</span>
             </motion.h1>
 
             {/* H2 - Typed Text */}
@@ -117,7 +112,7 @@ export default function HeroSection() {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.8, duration: 0.5 }}
-              className="text-[20px] md:text-[24px] font-display text-accent-violet h-[36px] mb-6"
+              className="text-[20px] md:text-[24px] font-display text-white h-[36px] mb-6"
             >
               <TypedText
                 strings={[
@@ -151,7 +146,7 @@ export default function HeroSection() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.7, duration: 0.4 }}
                 whileHover={{ scale: 1.03 }}
-                className="w-full sm:w-auto px-6 py-3 rounded-lg bg-gradient-to-r from-accent-violet to-accent-cyan text-white font-body font-medium flex items-center justify-center gap-2 shadow-lg shadow-accent-violet/20 hover:bg-[length:200%_auto] hover:bg-right transition-all duration-500"
+                className="w-full sm:w-auto px-6 py-3 rounded-full bg-white text-black font-body font-bold flex items-center justify-center gap-2 hover:bg-neutral-200 transition-all duration-300"
                 style={{ backgroundSize: "100%" }}
               >
                 View My Work
@@ -159,13 +154,13 @@ export default function HeroSection() {
               </motion.a>
               <motion.a
                 href="/cv"
-                target="_blank"
                 initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ delay: 0.8, duration: 0.4 }}
-                className="w-full sm:w-auto px-6 py-3 rounded-lg border border-accent-violet text-accent-violet font-body font-medium hover:bg-accent-violet/10 transition-colors flex items-center justify-center gap-2"
+                whileHover={{ scale: 1.03, backgroundColor: "rgba(255, 255, 255, 0.05)" }}
+                className="w-full sm:w-auto px-6 py-3 rounded-full border border-white/40 bg-transparent text-white font-body font-bold hover:border-white transition-all flex items-center justify-center gap-2"
               >
-                <RiDownloadLine size={16} />
+                <RiDownloadLine size={18} className="text-white" />
                 Download CV
               </motion.a>
             </div>
@@ -181,7 +176,7 @@ export default function HeroSection() {
                 href="https://github.com/btehub-solutions"
                 target="_blank"
                 rel="noreferrer"
-                className="text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet dark:hover:text-accent-violet transition-all duration-200 hover:scale-125 focus:scale-125 focus:text-accent-violet"
+                className="text-text-muted-light dark:text-text-muted-dark hover:text-white dark:hover:text-white transition-all duration-200 hover:scale-125 focus:scale-125 focus:text-white"
                 title="View GitHub"
               >
                 <RiGithubFill className="w-6 h-6" />
@@ -191,7 +186,7 @@ export default function HeroSection() {
                 href="https://www.linkedin.com/in/ben-sam-oladoyin-527966233?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
                 target="_blank"
                 rel="noreferrer"
-                className="text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet dark:hover:text-accent-violet transition-all duration-200 hover:scale-125 focus:scale-125 focus:text-accent-violet"
+                className="text-text-muted-light dark:text-text-muted-dark hover:text-white dark:hover:text-white transition-all duration-200 hover:scale-125 focus:scale-125 focus:text-white"
                 title="Connect on LinkedIn"
               >
                 <RiLinkedinFill className="w-6 h-6" />
@@ -201,7 +196,7 @@ export default function HeroSection() {
                 href="https://www.facebook.com/share/16KthtYMDY/?mibextid=wwXIfr"
                 target="_blank"
                 rel="noreferrer"
-                className="text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet dark:hover:text-accent-violet transition-all duration-200 hover:scale-125 focus:scale-125 focus:text-accent-violet"
+                className="text-text-muted-light dark:text-text-muted-dark hover:text-white dark:hover:text-white transition-all duration-200 hover:scale-125 focus:scale-125 focus:text-white"
                 title="Follow on Facebook"
               >
                 <RiFacebookFill className="w-6 h-6" />
@@ -211,7 +206,7 @@ export default function HeroSection() {
                 href="https://wa.me/2347045422815"
                 target="_blank"
                 rel="noreferrer"
-                className="text-text-muted-light dark:text-text-muted-dark hover:text-accent-violet dark:hover:text-accent-violet transition-all duration-200 hover:scale-125 focus:scale-125 focus:text-accent-violet"
+                className="text-text-muted-light dark:text-text-muted-dark hover:text-white dark:hover:text-white transition-all duration-200 hover:scale-125 focus:scale-125 focus:text-white"
                 title="Message on WhatsApp"
               >
                 <RiWhatsappFill className="w-6 h-6" />
@@ -227,8 +222,8 @@ export default function HeroSection() {
             className="hidden md:flex relative lg:h-full min-h-[400px] items-center justify-center lg:justify-end mt-12 lg:mt-0"
           >
             <div className="relative w-full max-w-[400px] aspect-square flex items-center justify-center animate-[breatheSvg_6s_ease-in-out_infinite]">
-              {/* Radial glow background */}
-              <div className="absolute inset-0 bg-accent-glow rounded-full blur-[80px] opacity-40 dark:opacity-60 scale-75"></div>
+              {/* No glow background for pure black DNA */}
+              <div className="absolute inset-0 bg-transparent"></div>
               
               <svg viewBox="0 0 400 400" width="100%" height="auto" className="w-full h-full relative z-10 overflow-visible">
                 <defs>
@@ -293,7 +288,7 @@ export default function HeroSection() {
                       strokeLinecap="round"
                       fill="none"
                       style={{
-                        stroke: isDark ? "#06B6D4" : "#6366F1",
+                        stroke: isDark ? "#FFFFFF" : "#000000",
                         animationDelay: edge.delay
                       }}
                     />
@@ -310,7 +305,7 @@ export default function HeroSection() {
                       r={node.r}
                       className="node-anim"
                       style={{
-                        fill: "#6366F1",
+                        fill: "#FFFFFF",
                         transformOrigin: `${node.cx}px ${node.cy}px`,
                         animationDelay: `${i * 0.15}s`
                       }}
@@ -328,7 +323,7 @@ export default function HeroSection() {
         <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center justify-center transition-opacity duration-300">
           <span className="font-mono text-[11px] tracking-widest text-text-muted-light dark:text-text-muted-dark -rotate-90 mb-4 uppercase">scroll</span>
           <div className="w-[1px] h-10 bg-light-border dark:bg-dark-border relative overflow-hidden">
-            <div className="w-full h-1/2 bg-accent-violet absolute top-0 left-0 animate-[travelLine_2s_ease-in-out_infinite]"></div>
+            <div className="w-full h-1/2 bg-white absolute top-0 left-0 animate-[travelLine_2s_ease-in-out_infinite]"></div>
           </div>
         </div>
       )}
