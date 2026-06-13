@@ -70,8 +70,8 @@ export default function RootLayout({
               "jobTitle": "AI & ML Engineer",
               "url": "https://btehub.vercel.app",
               "sameAs": [
-                "[PLACEHOLDER_LINKEDIN_URL]",
-                "[PLACEHOLDER_GITHUB_URL]"
+                "https://www.linkedin.com/in/ben-sam-oladoyin-527966233",
+                "https://github.com/btehub-solutions"
               ]
             })
           }}

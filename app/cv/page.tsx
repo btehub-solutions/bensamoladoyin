@@ -56,7 +56,7 @@ export default function CVPage() {
             {/* Profile Image */}
               <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-4 border-slate-700/50 shadow-xl shrink-0">
                 <Image
-                  src="/images/profile.jpg"
+                  src="/images/profile.jpg?v=2"
                   alt="Ben Sam Oladoyin"
                   fill
                   className="object-cover object-top"

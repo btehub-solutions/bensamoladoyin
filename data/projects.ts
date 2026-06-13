@@ -28,6 +28,19 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "coreai",
+    title: "CoreAI Monorepo",
+    description:
+      "A production-ready AI automation monorepo combining Next.js with FastAPI, integrating Gemini and Anthropic for scalable workflows.",
+    longDescription:
+      "CoreAI is a high-performance monorepo designed for enterprise automation. It orchestrates intelligent workflows by dynamically routing between Google Gemini and Anthropic Claude APIs. Built with async database management, secure user authentication, and real-time analytical logs, it represents a scalable pipeline for modern generative AI applications.",
+    techStack: ["FastAPI", "Next.js", "Gemini API", "Claude API", "PostgreSQL", "TypeScript", "Python"],
+    category: "AI Application",
+    image: "",
+    github: "https://github.com/btehub-solutions/CoreAI",
+    featured: true,
+  },
+  {
     id: "alertdrive-ai",
     title: "AlertDrive AI",
     description:
@@ -76,49 +89,26 @@ export const projects: Project[] = [
     metrics: ["2,500+ Active Learners", "AI-Powered Interactions"],
   },
   {
-    id: "vetlink-connect",
-    title: "VetLink Connect",
-    description:
-      "A premium agribusiness platform for Divine Agvet featuring 'Authentic Medicines. Zero Compromise.' homegrown solutions for Nigerian livestock farms.",
-    longDescription:
-      "A high-impact agribusiness portal for Divine Agvet, focused on delivering authentic animal medicines direct from factory to farm. The platform modernizes livestock solutions with a trust-first approach for vets and farmers nationwide.",
-    techStack: ["React", "Node.js", "FastAPI", "Python", "PostgreSQL"],
-    category: "AI Application",
-    image: "/images/projects/vetlink_hero.png",
-    github: "https://github.com/btehub-solutions/vetlink-connect",
-    live: "https://www.divineagvet.com/",
+    id: "asa",
+    title: "Asa Art Marketplace",
+    description: "A digital gallery and e-commerce platform celebrating African art and Yoruba heritage, connecting artists with collectors.",
+    longDescription: "Asa is a curated digital gallery celebrating African art. It features secure transactions, artist profiles, and high-performance image rendering to showcase Adire textiles, Benin Bronzes, and contemporary works.",
+    techStack: ["Next.js", "React", "Tailwind CSS", "TypeScript", "E-commerce"],
+    category: "Web Application",
+    image: "",
+    github: "https://github.com/btehub-solutions/Asa",
     featured: false,
-    metrics: ["Homegrown Solutions", "Authentic Medicines"],
   },
   {
-    id: "olas-realtor",
-    title: "Olas Realtor Consulting",
-    description:
-      "A comprehensive real estate consulting platform for Olas Realtor Ltd. Bridging property discovery and professional training with an integrated AI chatbot for the Nigerian market.",
-    longDescription:
-      "A comprehensive real estate consulting platform for Olas Realtor Ltd. Bridging property discovery and professional training with an integrated AI chatbot for the Nigerian market.",
-    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "React", "Vercel"],
+    id: "trax",
+    title: "Trax Tech News Hub",
+    description: "A media-first news platform tracking startups, funding, and agritech/fintech innovations across Ogun State, Nigeria.",
+    longDescription: "Trax is a tech news platform covering the Abeokuta startup ecosystem. It provides real-time publication updates, optimized SEO, and structured content hosting for agritech, fintech, and digital innovations.",
+    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "React", "SEO"],
     category: "Web Application",
-    image: "/images/projects/olas.png",
-    github: "https://github.com/btehub-solutions/Olas-Realtor-Consulting-Ltd",
-    live: "https://olasrealtor.com/",
+    image: "",
+    github: "https://github.com/btehub-solutions/Trax",
     featured: false,
-    metrics: ["Property Discovery", "Professional Training"],
-  },
-  {
-    id: "ojaybee-farms",
-    title: "O-Jay-Bee Farms Elevate",
-    description:
-      "A digital transformation showcase for O-Jay-Bee Farms, highlighting 'Trusted Agricultural Production & Processing' across Ogun State and Lagos.",
-    longDescription:
-      "A comprehensive digital platform for O-Jay-Bee Farms, streamlining the production and supply of premium catfish, broilers, garri, and yam flakes. Modernizing traditional agriculture with efficient digital workflows.",
-    techStack: ["Next.js", "React", "Tailwind CSS", "TypeScript", "Vercel"],
-    category: "Web Application",
-    image: "/images/projects/ojaybee_hero.png",
-    github: "https://github.com/btehub-solutions/o-jay-bee-farms-elevate",
-    live: "https://ojaybeefarms.vercel.app/",
-    featured: false,
-    metrics: ["Agribusiness Modernization", "Ogun State Farms"],
   },
 ];
 

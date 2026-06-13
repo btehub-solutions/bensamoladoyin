@@ -51,7 +51,7 @@ export default function AboutSection() {
             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border">
               {/* Avatar profile photo */}
               <Image 
-                src="/images/profile.jpg"
+                src="/images/profile.jpg?v=2"
                 alt="Ben Sam Oladoyin Avatar"
                 fill
                 className="object-cover object-top"
@@ -84,7 +84,7 @@ export default function AboutSection() {
         >
           <div className="space-y-4 text-text-muted-light dark:text-text-muted-dark font-body leading-relaxed">
             <p>
-              <strong>Ben Sam Oladoyin</strong> is a high-performance AI & Machine Learning Engineer and Founder of <strong>BTEHub Solutions</strong>, where he bridges the gap between complex intelligence and professional-grade business application. He specializes in building autonomous AI agents, intelligent workflows, and cinematic digital products that empower brands to scale with precision.
+              I am a high-performance AI & Machine Learning Engineer and Founder of <strong>BTEHub Solutions</strong>, where I bridge the gap between complex intelligence and professional-grade business application. I specialize in building autonomous AI agents, intelligent workflows, and cinematic digital products that empower brands to scale with precision.
             </p>
             <p>
               I specialize in transforming ideas into working products - from designing 
@@ -113,7 +113,7 @@ export default function AboutSection() {
             ].map((tag) => (
               <span
                 key={tag}
-                className="px-3 py-1.5 rounded-lg bg-white/5 text-white text-sm font-mono border border-white/10"
+                className="px-3.5 py-1.5 rounded-full bg-white/5 text-white text-sm font-mono border border-white/10"
               >
                 {tag}
               </span>

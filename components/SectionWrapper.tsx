@@ -17,18 +17,21 @@ export default function SectionWrapper({
   showDivider = true,
 }: SectionWrapperProps) {
   return (
-    <section id={id} className={`relative py-20 md:py-32 ${className}`}>
+    <section id={id} className={`relative py-20 md:py-32 overflow-hidden ${className}`}>
+      {/* Dynamic Contrast: Deep radial gradients behind sections for visual depth */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[70vw] h-[70vw] max-w-[800px] max-h-[800px] bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-white/[0.03] to-transparent rounded-full blur-[80px] pointer-events-none z-0" />
+      
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true, margin: "-100px" }}
         transition={{ duration: 0.6, ease: "easeOut" }}
-        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transform-gpu"
+        className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 transform-gpu"
       >
         {children}
       </motion.div>
       {showDivider && (
-        <div className="section-divider max-w-4xl mx-auto mt-20" />
+        <div className="relative z-10 section-divider max-w-4xl mx-auto mt-20" />
       )}
     </section>
   );

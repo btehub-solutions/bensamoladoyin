@@ -12,9 +12,9 @@ interface ProjectCardProps {
 }
 
 const domainColorMap: Record<string, string> = {
-  "Generative AI": "bg-white/5 text-white border-white/10",
-  "AI Application": "bg-white/5 text-white border-white/10",
-  "Web Application": "bg-white/5 text-white border-white/10",
+  "Generative AI": "bg-purple-500/10 text-purple-300 border-purple-500/20",
+  "AI Application": "bg-cyan-500/10 text-cyan-300 border-cyan-500/20",
+  "Web Application": "bg-blue-500/10 text-blue-300 border-blue-500/20",
 };
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
@@ -36,7 +36,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         y: -10,
         transition: { duration: 0.3, ease: "easeOut" }
       }}
-      className="group relative rounded-2xl bg-black dark:bg-black border border-light-border dark:border-dark-border overflow-hidden shadow-none hover:border-white/30 transition-all duration-500 glow-card transform-gpu backface-hidden"
+      className="group relative rounded-2xl bg-black dark:bg-black border border-light-border dark:border-dark-border overflow-hidden shadow-none hover:border-white/30 transition-all duration-500 glow-card transform-gpu backface-hidden flex flex-col h-full"
       style={{
         transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)"
       }}
@@ -73,7 +73,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         {/* Category Badge - Always visible on top of image/gradient */}
         <div className="absolute bottom-4 left-4 z-10">
           <span
-            className={`text-[10px] uppercase tracking-wider font-mono px-2.5 py-1 rounded-md border backdrop-blur-md ${domainStyle}`}
+            className={`text-[10px] uppercase tracking-wider font-mono px-3 py-1 rounded-full border backdrop-blur-md ${domainStyle}`}
           >
             {project.category}
           </span>
@@ -81,14 +81,14 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
 
         {/* Featured badge */}
         {project.featured && (
-          <div className="absolute top-4 right-4 z-10 px-2.5 py-1 rounded-lg bg-white/10 border border-white/20 text-white text-[10px] font-mono backdrop-blur-md">
+          <div className="absolute top-4 right-4 z-10 px-2.5 py-1 rounded-full bg-white/10 border border-white/20 text-white text-[10px] font-mono backdrop-blur-md">
             Featured
           </div>
         )}
       </div>
 
       {/* Content */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-1">
         <h3 className="text-xl font-display font-bold text-text-primary-light dark:text-text-primary-dark mb-2 group-hover:text-white transition-colors duration-300">
           {project.title}
         </h3>
@@ -101,7 +101,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           {project.techStack.map((tech) => (
             <span
               key={tech}
-              className="px-2 py-1 rounded-md bg-white/5 text-xs font-mono text-text-muted-dark border border-white/10"
+              className="px-2.5 py-1 rounded-full bg-white/5 text-xs font-mono text-text-muted-dark border border-white/10"
             >
               {tech}
             </span>
@@ -109,7 +109,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         </div>
 
         {/* Actions */}
-        <div className="flex items-center gap-3 pt-4 border-t border-light-border dark:border-dark-border">
+        <div className="flex items-center gap-3 pt-4 border-t border-light-border dark:border-dark-border mt-auto">
           {project.github && (
             <a
               href={project.github}

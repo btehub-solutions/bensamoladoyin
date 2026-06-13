@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import TypedText from "./TypedText";
 import { RiGithubFill, RiLinkedinFill, RiFacebookFill, RiWhatsappFill, RiArrowDownLine, RiDownloadLine } from "react-icons/ri";
 import { useEffect, useState, useRef } from "react";
-import { useTheme } from "next-themes";
 
 const neuralNodes = [
   { cx: 50, cy: 100, r: 6 },
@@ -44,14 +43,8 @@ const neuralEdges = [
 ];
 
 export default function HeroSection() {
-  const { theme, resolvedTheme } = useTheme();
-  const [mounted, setMounted] = useState(false);
   const [showScrollIndicator, setShowScrollIndicator] = useState(true);
   const heroRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -66,16 +59,11 @@ export default function HeroSection() {
     return () => observer.disconnect();
   }, []);
 
-  const isDark = !mounted || theme === "dark" || resolvedTheme === "dark";
-
   return (
     <section ref={heroRef} id="hero" className="relative min-h-screen w-full flex items-start md:items-center justify-center overflow-hidden pt-12 md:pt-0">
       {/* Background */}
       <div 
-        className="absolute inset-0 pointer-events-none z-0"
-        style={{
-          backgroundColor: isDark ? "#000000" : "#F5F7FA",
-        }}
+        className="absolute inset-0 pointer-events-none z-0 bg-black"
       />
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full h-full flex flex-col justify-center">
@@ -266,7 +254,7 @@ export default function HeroSection() {
                 </defs>
 
                 {/* Edges */}
-                <g className={isDark ? "stroke-accent-violet/30" : "stroke-accent-violet/20"}>
+                <g className="stroke-accent-violet/30">
                   {neuralEdges.map((edge, i) => (
                     <path
                       key={`edge-${i}`}
@@ -288,7 +276,7 @@ export default function HeroSection() {
                       strokeLinecap="round"
                       fill="none"
                       style={{
-                        stroke: isDark ? "#FFFFFF" : "#000000",
+                        stroke: "#FFFFFF",
                         animationDelay: edge.delay
                       }}
                     />
@@ -296,7 +284,7 @@ export default function HeroSection() {
                 </g>
 
                 {/* Nodes */}
-                <g filter={isDark ? "url(#glow-dark)" : "url(#glow-light)"}>
+                <g filter="url(#glow-dark)">
                   {neuralNodes.map((node, i) => (
                     <circle
                       key={`node-${i}`}

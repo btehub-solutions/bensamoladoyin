@@ -94,7 +94,7 @@ export default function ExperienceSection() {
                   {exp.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="px-2 py-1 rounded-md bg-light-bg dark:bg-dark-bg text-xs font-mono text-text-muted-light dark:text-text-muted-dark border border-light-border dark:border-dark-border"
+                      className="px-2.5 py-1 rounded-full bg-light-bg dark:bg-dark-bg text-xs font-mono text-text-muted-light dark:text-text-muted-dark border border-light-border dark:border-dark-border"
                     >
                       {tag}
                     </span>

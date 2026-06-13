@@ -72,7 +72,7 @@ export default function CommunitySection() {
                     {item.title}
                   </h3>
                   <span
-                    className={`px-2 py-0.5 rounded-md text-xs font-mono border ${typeColors[item.type]}`}
+                    className={`px-2.5 py-0.5 rounded-full text-xs font-mono border ${typeColors[item.type]}`}
                   >
                     {typeLabels[item.type]}
                   </span>
