@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import SectionWrapper, { SectionHeading } from "./SectionWrapper";
 import { FiCode, FiCpu, FiTrendingUp, FiUsers } from "react-icons/fi";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 const highlights = [
   {
@@ -29,6 +30,16 @@ const highlights = [
 ];
 
 export default function AboutSection() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(hover: hover)");
+    setIsDesktop(media.matches);
+    const listener = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
   return (
     <SectionWrapper id="about">
       <SectionHeading
@@ -51,9 +62,10 @@ export default function AboutSection() {
             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border">
               {/* Avatar profile photo */}
               <Image 
-                src="/images/profile.jpg?v=2"
+                src="/images/profile.jpg?v=3"
                 alt="Ben Sam Oladoyin Avatar"
                 fill
+                sizes="(max-width: 768px) 288px, 320px"
                 className="object-cover object-top"
                 priority
               />
@@ -131,8 +143,12 @@ export default function AboutSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -5 }}
-              className="group relative p-6 rounded-2xl bg-black dark:bg-black border border-light-border dark:border-dark-border text-center hover:border-white/30 glow-card transform-gpu backface-hidden shadow-none hover:shadow-xl"
+              whileHover={
+                isDesktop
+                  ? { y: -5, transition: { duration: 0.3, ease: "easeOut" } }
+                  : undefined
+              }
+              className="group relative p-6 rounded-2xl bg-black dark:bg-black border border-light-border dark:border-dark-border text-center hover:border-white/30 glow-card shadow-none hover:shadow-xl"
               style={{
                 transition: "border-color 0.3s ease, box-shadow 0.3s ease"
               }}

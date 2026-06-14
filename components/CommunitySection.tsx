@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import SectionWrapper, { SectionHeading } from "./SectionWrapper";
 import { communityItems } from "@/data/community";
+import { useState, useEffect } from "react";
 import {
   FiMic,
   FiBookOpen,
@@ -37,6 +38,16 @@ const typeColors: Record<string, string> = {
 };
 
 export default function CommunitySection() {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(hover: hover)");
+    setIsDesktop(media.matches);
+    const listener = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
   return (
     <SectionWrapper id="community">
       <SectionHeading
@@ -54,8 +65,12 @@ export default function CommunitySection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-10px" }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -2 }}
-              className="group flex gap-4 p-6 rounded-2xl bg-white dark:bg-black border border-light-border dark:border-dark-border glow-card transform-gpu backface-hidden shadow-sm hover:shadow-md hover:border-white/30"
+              whileHover={
+                isDesktop
+                  ? { y: -2, transition: { duration: 0.3, ease: "easeOut" } }
+                  : undefined
+              }
+              className="group flex gap-4 p-6 rounded-2xl bg-white dark:bg-black border border-light-border dark:border-dark-border glow-card shadow-sm hover:shadow-md hover:border-white/30"
               style={{
                 transition: "border-color 0.3s ease, box-shadow 0.3s ease"
               }}

@@ -9,6 +9,15 @@ import Image from "next/image";
 
 export default function CertificationsSection() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(hover: hover)");
+    setIsDesktop(media.matches);
+    const listener = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
   
   // Prevent scrolling when modal is open
   useEffect(() => {
@@ -38,8 +47,12 @@ export default function CertificationsSection() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            whileHover={{ y: -5 }}
-            className="group relative flex flex-col rounded-2xl bg-white dark:bg-black border border-light-border dark:border-dark-border overflow-hidden h-full shadow-sm hover:shadow-xl hover:border-white/30 glow-card transform-gpu backface-hidden"
+            whileHover={
+              isDesktop
+                ? { y: -5, transition: { duration: 0.3, ease: "easeOut" } }
+                : undefined
+            }
+            className="group relative flex flex-col rounded-2xl bg-white dark:bg-black border border-light-border dark:border-dark-border overflow-hidden h-full shadow-sm hover:shadow-xl hover:border-white/30 glow-card"
             style={{
               transitionProperty: "border-color, box-shadow",
               transitionDuration: "300ms",
@@ -49,7 +62,7 @@ export default function CertificationsSection() {
             {/* Image Preview - Since these are high-res Udemy certs, object-cover looks great */}
             <button 
               onClick={() => setSelectedImage(cert.image || null)}
-              className="relative aspect-[4/3] w-full overflow-hidden border-b border-light-border dark:border-dark-border bg-[#1a1a1a] cursor-zoom-in transform-gpu"
+              className="relative aspect-[4/3] w-full overflow-hidden border-b border-light-border dark:border-dark-border bg-[#1a1a1a] cursor-zoom-in"
             >
               {cert.image ? (
                 <Image
@@ -58,7 +71,7 @@ export default function CertificationsSection() {
                   fill
                   unoptimized
                   quality={100}
-                  className="object-cover group-hover:scale-105 transition-transform duration-700 transform-gpu"
+                  className="object-cover lg:group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />
               ) : (

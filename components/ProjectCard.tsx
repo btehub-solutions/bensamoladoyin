@@ -5,6 +5,7 @@ import { FiExternalLink, FiArrowUpRight } from "react-icons/fi";
 import { RiGithubFill } from "react-icons/ri";
 import { Project } from "@/data/projects";
 import Image from "next/image";
+import { useState, useEffect } from "react";
 
 interface ProjectCardProps {
   project: Project;
@@ -18,6 +19,16 @@ const domainColorMap: Record<string, string> = {
 };
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+  const [isDesktop, setIsDesktop] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(hover: hover)");
+    setIsDesktop(media.matches);
+    const listener = (e: MediaQueryListEvent) => setIsDesktop(e.matches);
+    media.addEventListener("change", listener);
+    return () => media.removeEventListener("change", listener);
+  }, []);
+
   const domainStyle =
     domainColorMap[project.category] ||
     "bg-white/5 text-white border-white/10";
@@ -32,17 +43,18 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
         delay: index * 0.1,
         ease: [0.25, 1, 0.5, 1] 
       }}
-      whileHover={{ 
-        y: -10,
-        transition: { duration: 0.3, ease: "easeOut" }
-      }}
-      className="group relative rounded-2xl bg-black dark:bg-black border border-light-border dark:border-dark-border overflow-hidden shadow-none hover:border-white/30 transition-all duration-500 glow-card transform-gpu backface-hidden flex flex-col h-full"
-      style={{
-        transitionTimingFunction: "cubic-bezier(0.23, 1, 0.32, 1)"
-      }}
+      whileHover={
+        isDesktop
+          ? {
+              y: -10,
+              transition: { duration: 0.3, ease: "easeOut" },
+            }
+          : undefined
+      }
+      className="group relative rounded-2xl bg-black dark:bg-black border border-light-border dark:border-dark-border overflow-hidden shadow-none hover:border-white/30 transition-colors duration-500 glow-card flex flex-col h-full"
     >
       {/* Project Image / Gradient Header */}
-      <div className="relative h-48 overflow-hidden bg-black/50 transform-gpu">
+      <div className="relative h-48 overflow-hidden bg-black/50">
         {project.image ? (
           <>
             <Image
@@ -50,7 +62,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
               alt={project.title}
               fill
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-              className="object-cover group-hover:scale-110 transition-transform duration-700 ease-out transform-gpu"
+              className="object-cover lg:group-hover:scale-110 transition-transform duration-700 ease-out"
               loading="lazy"
             />
             {/* Overlay Gradient for contrast */}
@@ -58,7 +70,7 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </>
         ) : (
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-white/5 to-transparent flex items-center justify-center">
-            <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+            <div className="w-16 h-16 rounded-2xl bg-white/10 border border-white/20 flex items-center justify-center lg:group-hover:scale-110 transition-transform duration-300">
               <span className="text-2xl font-display font-bold text-white">
                 {project.title
                   .split(" ")
