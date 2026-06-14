@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 
 interface TypedTextProps {
   strings: string[];
@@ -21,20 +21,23 @@ export default function TypedText({
   const [currentText, setCurrentText] = useState("");
   const [isDeleting, setIsDeleting] = useState(false);
 
-  const handleTyping = useCallback(() => {
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>;
     const currentFullString = strings[currentStringIndex];
 
     if (!isDeleting) {
-      if (currentText.length < currentFullString.length) {
-        setTimeout(() => {
+      if (currentText !== currentFullString) {
+        timer = setTimeout(() => {
           setCurrentText(currentFullString.slice(0, currentText.length + 1));
         }, typeSpeed);
       } else {
-        setTimeout(() => setIsDeleting(true), delayBetween);
+        timer = setTimeout(() => {
+          setIsDeleting(true);
+        }, delayBetween);
       }
     } else {
-      if (currentText.length > 0) {
-        setTimeout(() => {
+      if (currentText !== "") {
+        timer = setTimeout(() => {
           setCurrentText(currentText.slice(0, -1));
         }, deleteSpeed);
       } else {
@@ -42,20 +45,9 @@ export default function TypedText({
         setCurrentStringIndex((prev) => (prev + 1) % strings.length);
       }
     }
-  }, [
-    currentText,
-    isDeleting,
-    currentStringIndex,
-    strings,
-    typeSpeed,
-    deleteSpeed,
-    delayBetween,
-  ]);
 
-  useEffect(() => {
-    const timer = setTimeout(handleTyping, isDeleting ? deleteSpeed : typeSpeed);
     return () => clearTimeout(timer);
-  }, [handleTyping, isDeleting, deleteSpeed, typeSpeed]);
+  }, [currentText, isDeleting, currentStringIndex, strings, typeSpeed, deleteSpeed, delayBetween]);
 
   return (
     <span className={className}>

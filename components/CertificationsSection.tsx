@@ -69,8 +69,7 @@ export default function CertificationsSection() {
                   src={cert.image}
                   alt={cert.title}
                   fill
-                  unoptimized
-                  quality={100}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   className="object-cover lg:group-hover:scale-105 transition-transform duration-700"
                   loading="lazy"
                 />

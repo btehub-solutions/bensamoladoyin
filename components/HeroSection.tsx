@@ -244,10 +244,13 @@ export default function HeroSection() {
                       .node-anim {
                         transform-origin: center;
                         animation: pulseNode 3s infinite ease-in-out;
+                        will-change: transform, opacity;
+                        filter: drop-shadow(0px 0px 5px rgba(255, 255, 255, 0.8));
                       }
                       .signal-anim {
                         stroke-dasharray: 8 200;
                         animation: travelSignal 2.5s infinite linear;
+                        will-change: stroke-dashoffset, opacity;
                       }
                     `}
                   </style>
@@ -284,7 +287,7 @@ export default function HeroSection() {
                 </g>
 
                 {/* Nodes */}
-                <g filter="url(#glow-dark)">
+                <g>
                   {neuralNodes.map((node, i) => (
                     <circle
                       key={`node-${i}`}
