@@ -28,6 +28,20 @@ export const projects: Project[] = [
     featured: true,
   },
   {
+    id: "trax",
+    title: "Trax (trax.ng)",
+    description:
+      "Ogun State's tech news and startup media platform tracking the local technology movement, funding rounds, and builder ecosystem.",
+    longDescription:
+      "Trax is Ogun State's tech news and startup media platform. It tracks the local technology movement, covers startup funding rounds, details tech ecosystem events (like Founders Friday Abeokuta), and highlights agritech, fintech, and digital innovations across the state.",
+    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "React", "SEO"],
+    category: "Web Application",
+    image: "/images/projects/trax.png",
+    github: "https://github.com/btehub-solutions/Trax",
+    live: "https://trax.ng",
+    featured: true,
+  },
+  {
     id: "coreai",
     title: "CoreAI Monorepo",
     description:
@@ -97,17 +111,6 @@ export const projects: Project[] = [
     category: "Web Application",
     image: "/images/projects/asa.png",
     github: "https://github.com/btehub-solutions/Asa",
-    featured: false,
-  },
-  {
-    id: "trax",
-    title: "Trax Tech News Hub",
-    description: "A media-first news platform tracking startups, funding, and agritech/fintech innovations across Ogun State, Nigeria.",
-    longDescription: "Trax is a tech news platform covering the Abeokuta startup ecosystem. It provides real-time publication updates, optimized SEO, and structured content hosting for agritech, fintech, and digital innovations.",
-    techStack: ["Next.js", "Tailwind CSS", "TypeScript", "React", "SEO"],
-    category: "Web Application",
-    image: "/images/projects/trax.png",
-    github: "https://github.com/btehub-solutions/Trax",
     featured: false,
   },
 ];

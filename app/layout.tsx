@@ -24,15 +24,15 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://btehub.vercel.app"),
+  metadataBase: new URL("https://www.bensamoladoyin.vercel.app"),
   title: "Ben Sam Oladoyin | AI & ML Engineer",
-  description: "AI & ML Engineer specializing in LLMs, AI Agents, Computer Vision, and Conversational AI. Available for full-time roles globally.",
-  keywords: ["AI Engineer", "ML Engineer", "LLM", "AI Agents", "Computer Vision", "Nigeria", "Ben Sam Oladoyin", "BTEHub"],
+  description: "AI & ML Engineer and Founder of Trax & BTEHub Solutions. Specializing in LLMs, AI Agents, Computer Vision, and Conversational AI.",
+  keywords: ["AI Engineer", "ML Engineer", "LLM", "AI Agents", "Computer Vision", "Nigeria", "Ben Sam Oladoyin", "BTEHub", "Trax", "trax.ng", "Ogun State Tech"],
   authors: [{ name: "Ben Sam Oladoyin" }],
   openGraph: {
     title: "Ben Sam Oladoyin | AI & ML Engineer",
     description: "Building intelligent systems that solve real problems.",
-    url: "https://btehub.vercel.app",
+    url: "https://www.bensamoladoyin.vercel.app",
     siteName: "Ben Sam Oladoyin",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
     type: "website",
@@ -68,7 +68,7 @@ export default function RootLayout({
               "@type": "Person",
               "name": "Ben Sam Oladoyin",
               "jobTitle": "AI & ML Engineer",
-              "url": "https://btehub.vercel.app",
+              "url": "https://www.bensamoladoyin.vercel.app",
               "sameAs": [
                 "https://www.linkedin.com/in/ben-sam-oladoyin-527966233",
                 "https://github.com/btehub-solutions"

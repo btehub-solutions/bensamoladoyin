@@ -104,6 +104,7 @@ export default function HeroSection() {
             >
               <TypedText
                 strings={[
+                  "Founder of Trax (trax.ng).",
                   "Founder of BTEHub Solutions.",
                   "I build intelligent AI systems.",
                   "I engineer autonomous agents.",
@@ -123,7 +124,7 @@ export default function HeroSection() {
               transition={{ delay: 0.5, duration: 0.6 }}
               className="text-[16px] font-body text-text-muted-light dark:text-text-muted-dark max-w-xl mb-10 leading-relaxed text-left"
             >
-              <strong>Ben Sam Oladoyin</strong> is a high-performance AI & Machine Learning Engineer and Founder of <strong>BTEHub Solutions</strong>. He specializes in bridging the gap between advanced AI research and professional-grade implementation. With expertise in autonomous agents and cinematic digital architecture, Ben empowers brands to scale through intelligent automation.
+              <strong>Ben Sam Oladoyin</strong> is a high-performance AI & Machine Learning Engineer and Founder of <strong>BTEHub Solutions</strong> and <strong>Trax</strong> (<a href="https://trax.ng" target="_blank" rel="noopener noreferrer" className="hover:underline text-white font-bold">trax.ng</a>). He specializes in bridging the gap between advanced AI research and professional-grade implementation. With expertise in autonomous agents and cinematic digital architecture, Ben empowers brands to scale through intelligent automation.
             </motion.p>
 
             {/* CTA Buttons */}

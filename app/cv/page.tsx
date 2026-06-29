@@ -56,7 +56,7 @@ export default function CVPage() {
             {/* Profile Image */}
               <div className="relative w-32 h-32 md:w-40 md:h-40 rounded-2xl overflow-hidden border-4 border-slate-700/50 shadow-xl shrink-0">
                 <Image
-                  src="/images/profile.jpg?v=2"
+                  src="/images/profile.jpg?v=3"
                   alt="Ben Sam Oladoyin"
                   fill
                   className="object-cover object-top"
@@ -69,7 +69,7 @@ export default function CVPage() {
                 Ben Sam Oladoyin
               </h1>
               <p className="text-xl md:text-2xl font-light text-slate-300 mb-6">
-                Founder & AI/ML Engineer
+                Founder of Trax & BTEHub Solutions | AI/ML Engineer
               </p>
               
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-3 gap-x-6 text-sm text-slate-400">
@@ -85,10 +85,10 @@ export default function CVPage() {
                   <RiMapPinLine className="text-white/60" />
                   <span>Abeokuta, Nigeria</span>
                 </div>
-                <div className="flex items-center justify-center md:justify-start gap-2">
+                <a href="https://bensamoladoyin.vercel.app" target="_blank" rel="noopener noreferrer" className="flex items-center justify-center md:justify-start gap-2 hover:text-white transition-colors">
                   <RiExternalLinkLine className="text-white/60" />
-                  <span>www.btehub.vercel.app</span>
-                </div>
+                  <span>bensamoladoyin.vercel.app</span>
+                </a>
               </div>
             </div>
           </div>
@@ -105,7 +105,7 @@ export default function CVPage() {
                 Professional Summary
               </h2>
               <p className="text-[15px] leading-relaxed text-slate-600 dark:text-slate-400 ">
-                Results-driven AI & ML Engineer and Founder of <strong className="text-slate-900 dark:text-white ">BTEHub Solutions</strong>, specializing in architecting 
+                Results-driven AI & ML Engineer and Founder of <strong className="text-slate-900 dark:text-white ">Trax</strong> and <strong className="text-slate-900 dark:text-white ">BTEHub Solutions</strong>, specializing in architecting 
                 intelligent systems, automation workflows, and scalable AI solutions. Demonstrated 
                 expertise in building autonomous agents and integrating advanced LLMs into production 
                 environments. Committed to transforming complex AI research into high-impact digital 
@@ -172,18 +172,18 @@ export default function CVPage() {
           {/* Sidebar (1/3) */}
           <div className="space-y-10">
             {/* Social Links */}
-            <section className="print:hidden">
+            <section>
               <h2 className="text-sm font-display font-bold uppercase tracking-widest text-slate-900 dark:text-white mb-4">
                 Links
               </h2>
               <div className="space-y-3">
-                <a href="https://linkedin.com/in/ben-sam-oladoyin-527966233" className="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-white transition-colors">
+                <a href="https://linkedin.com/in/ben-sam-oladoyin-527966233" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-white transition-colors">
                   <RiLinkedinBoxLine size={20} className="text-white/60" />
-                  <span className="text-sm">LinkedIn</span>
+                  <span className="text-sm">Ben Sam Oladoyin</span>
                 </a>
-                <a href="https://github.com/btehub-solutions" className="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-white transition-colors">
+                <a href="https://github.com/btehub-solutions" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 text-slate-600 dark:text-slate-400 hover:text-white transition-colors">
                   <RiGithubLine size={20} className="text-white/60" />
-                  <span className="text-sm">GitHub</span>
+                  <span className="text-sm">btehub-solutions</span>
                 </a>
               </div>
             </section>
@@ -225,6 +225,21 @@ export default function CVPage() {
                     </p>
                   </div>
                 ))}
+                
+                {/* 22+ other credentials drive link */}
+                <div className="pt-3 border-t border-slate-100 dark:border-slate-800 text-xs text-slate-500 font-medium">
+                  <a 
+                    href="https://drive.google.com/drive/folders/16W-Gx5xHapQaPfgfOLFDlNvE8oFrfzke?usp=drive_link" 
+                    target="_blank" 
+                    rel="noopener noreferrer" 
+                    className="hover:text-slate-900 dark:hover:text-white transition-colors block"
+                  >
+                    <span>• Plus 22+ other professional AI/ML credentials on Google Drive:</span>
+                    <span className="font-mono text-[9.5px] block mt-1.5 text-slate-400 break-all select-all">
+                      drive.google.com/drive/folders/16W-Gx5xHapQaPfgfOLFDlNvE8oFrfzke
+                    </span>
+                  </a>
+                </div>
               </div>
             </section>
 

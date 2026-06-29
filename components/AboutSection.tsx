@@ -19,7 +19,7 @@ const highlights = [
   },
   {
     icon: FiTrendingUp,
-    value: "3+",
+    value: "5+",
     label: "Years of Experience",
   },
   {
@@ -62,7 +62,7 @@ export default function AboutSection() {
             <div className="relative w-72 h-72 md:w-80 md:h-80 rounded-full overflow-hidden bg-light-card dark:bg-dark-card border border-light-border dark:border-dark-border">
               {/* Avatar profile photo */}
               <Image 
-                src="/images/profile.jpg?v=3"
+                src="/images/profile.jpg?v=4"
                 alt="Ben Sam Oladoyin Avatar"
                 fill
                 sizes="(max-width: 768px) 288px, 320px"
@@ -77,7 +77,7 @@ export default function AboutSection() {
               className="absolute -bottom-4 -right-4 px-4 py-3 rounded-xl bg-black dark:bg-black border border-light-border dark:border-dark-border shadow-xl backdrop-blur-sm"
             >
               <div className="text-white font-display font-bold text-lg">
-                3+ Years
+                5+ Years
               </div>
               <div className="text-xs text-text-muted-light dark:text-text-muted-dark font-mono">
                 in AI/ML
@@ -96,7 +96,7 @@ export default function AboutSection() {
         >
           <div className="space-y-4 text-text-muted-light dark:text-text-muted-dark font-body leading-relaxed">
             <p>
-              I am a high-performance AI & Machine Learning Engineer and Founder of <strong>BTEHub Solutions</strong>, where I bridge the gap between complex intelligence and professional-grade business application. I specialize in building autonomous AI agents, intelligent workflows, and cinematic digital products that empower brands to scale with precision.
+              I am a high-performance AI & Machine Learning Engineer and Founder of <strong>BTEHub Solutions</strong> and <strong>Trax</strong> (<a href="https://trax.ng" target="_blank" rel="noopener noreferrer" className="hover:underline text-white font-bold">trax.ng</a>), where I bridge the gap between complex intelligence and professional-grade business application. I specialize in building autonomous AI agents, intelligent workflows, and cinematic digital products that empower brands to scale with precision.
             </p>
             <p>
               I specialize in transforming ideas into working products - from designing 

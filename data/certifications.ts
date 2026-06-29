@@ -9,6 +9,14 @@ export interface Certification {
 
 export const certifications: Certification[] = [
   {
+    id: "udemy-aws-ml-associate",
+    title: "AWS Certified Machine Learning Engineer Associate: Hands On!",
+    issuer: "Udemy (Sundog Education by Frank Kane, Stephane Maarek)",
+    date: "June 2026",
+    credentialUrl: "https://ude.my/UC-98c21caa-8e0b-492d-b9ad-8c34f66ae8d8",
+    image: "/images/Certification/AWS-ML-Associate.jpg",
+  },
+  {
     id: "udemy-ai-ml",
     title: "Complete A.I. & Machine Learning, Data Science Bootcamp",
     issuer: "Udemy (Andrei Neagoie, Daniel Bourke)",

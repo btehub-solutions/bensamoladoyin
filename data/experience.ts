@@ -12,6 +12,21 @@ export interface Experience {
 
 export const experiences: Experience[] = [
   {
+    id: "exp-trax",
+    role: "Founder & Publisher",
+    organization: "Trax",
+    organizationUrl: "https://trax.ng",
+    type: "Position",
+    location: "Abeokuta, Nigeria",
+    period: "2026 - Present",
+    description: [
+      "Founded and launched Trax (trax.ng), Ogun State's tech news and startup media platform tracking the local technology movement, funding updates, and developer ecosystem.",
+      "Architected and developed the media platform using Next.js and Tailwind CSS with highly optimized SEO and content publishing workflows.",
+      "Authoring key editorial features, covering local startup stories, tech events (like Founders Friday Abeokuta), funding announcements, and technology trends across the state.",
+    ],
+    tags: ["Tech Journalism", "Next.js", "Community Engagement", "Startup Media", "SEO"],
+  },
+  {
     id: "exp-0",
     role: "Founder & Lead Engineer",
     organization: "BTEHub Solutions",

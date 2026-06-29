@@ -121,6 +121,60 @@ export default function CertificationsSection() {
             <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-accent-violet/5 to-transparent rounded-tr-2xl pointer-events-none" />
           </motion.div>
         ))}
+
+        {/* CTA Card for 22+ more certifications */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-10% 0px -10% 0px" }}
+          transition={{ duration: 0.5, delay: certifications.length * 0.1 }}
+          whileHover={
+            isDesktop
+              ? { y: -5, transition: { duration: 0.3, ease: "easeOut" } }
+              : undefined
+          }
+          className="group relative flex flex-col rounded-2xl bg-white/5 dark:bg-[#0c0c12]/40 border-2 border-dashed border-light-border dark:border-dark-border overflow-hidden h-full shadow-sm hover:shadow-xl hover:border-white/30 glow-card justify-between"
+          style={{
+            transitionProperty: "border-color, box-shadow",
+            transitionDuration: "300ms",
+            transitionTimingFunction: "ease-out"
+          }}
+        >
+          <div className="p-8 flex flex-col h-full justify-between">
+            <div>
+              <div className="flex items-start justify-between mb-6">
+                <div className="w-12 h-12 rounded-xl bg-white/10 border border-white/20 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <FiAward className="w-6 h-6 text-white" />
+                </div>
+                <span className="text-[10px] font-mono px-2 py-1 rounded-full bg-white/10 text-white border border-white/20 font-bold">
+                  Drive Archive
+                </span>
+              </div>
+
+              <h3 className="text-xl font-display font-bold text-text-primary-light dark:text-text-primary-dark mb-3 group-hover:text-white transition-colors leading-snug">
+                22+ More Credentials
+              </h3>
+              <p className="text-sm text-white/60 font-body mb-8 font-medium leading-relaxed">
+                Access the complete cloud folder hosting additional professional certifications in Deep Learning, Generative AI, MLOps, and Full-Stack Engineering.
+              </p>
+            </div>
+
+            <div>
+              <a
+                href="https://drive.google.com/drive/folders/16W-Gx5xHapQaPfgfOLFDlNvE8oFrfzke?usp=drive_link"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-white text-black font-body font-bold text-sm hover:bg-neutral-200 transition-all active:scale-95 shadow-md w-full justify-center"
+              >
+                <span>Open Drive Folder</span>
+                <FiExternalLink className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Decorative corner gradient */}
+          <div className="absolute top-0 right-0 w-24 h-24 bg-gradient-to-bl from-white/5 to-transparent rounded-tr-2xl pointer-events-none" />
+        </motion.div>
       </div>
 
     </SectionWrapper>
